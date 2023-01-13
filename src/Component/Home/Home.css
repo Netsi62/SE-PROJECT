@@ -1,0 +1,114 @@
+.search{
+    background: url('../../assets/banner.png') no-repeat 50% 25%;
+    background-size: cover;
+    width: 80vw;
+    height: 50vh;
+    margin-top: 2rem;
+    margin-left: 4rem;
+}
+
+.search input{
+    height: 2rem;
+    width: 15rem;
+    border-radius:30px;
+    outline: none;
+    border: none;
+    padding: 20px;
+}
+
+#visit{
+    float: left;
+    color: brown;
+    margin-bottom: 4rem;
+}
+
+
+.small-conatiner{
+    position: relative;
+    display: flex;
+    width: 94%;
+    overflow: auto;
+    scrollbar-width: 50%;
+    box-shadow: 1px 1px 4px 1px gray;
+    margin-left: 3%;
+    border-radius: 30px;
+    padding: 20px;
+    
+}
+.small-conatiner .card{
+    margin: 40px;
+    box-shadow: 0px 10px 10px rgb(125, 123, 123);
+    
+}
+
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+figure span{
+    color: coral;
+}
+
+
+.recent{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.pac{
+    width: 49%;
+    height: 12vh;
+    background-color: rgb(216, 88, 41);
+    border-radius: 40px;
+    color: white;
+    font-size: x-large;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pac div{
+    width: 7rem;
+    height: 85%;
+    background-color: yellowgreen;
+    position: absolute;
+    left: 8px;
+    border-radius: 3rem;
+    z-index: 1;
+}
+
+.pac p{
+    margin-left: 2rem;
+    z-index: 2;
+}
+
+.explore{
+    background-color: gray;
+}
+.search .city{
+    background-color: blue;
+    width: 15rem;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+.banner {
+margin: 40px 0px ;
+background-color: yellow;
+height: 40vh;
+width: 100%;
+padding: 40px 0px;
+display: flex;
+align-items: center;
+}
+.banner .conatiner{
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    height: 100%;
+    
+}
+.banner .conatiner img{
+    width: 80%;
+}
