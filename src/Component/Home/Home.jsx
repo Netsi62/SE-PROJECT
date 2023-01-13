@@ -4,61 +4,73 @@ import lalibela from '../../assets/lalibela.png'
 import valley from '../../assets/valley.png'
 import flag from '../../assets/flag.png'
 import { useState, useEffect } from 'react'
-import H from './H'
-import M from './M'
+import Recent from './RecentPackage'
+import Popular from './PopularPackage'
 import {FaSearch,FiMapPin} from "react-icons/fa";
+import Banner from '../most used/banner/banner'
+import Swipper from '../most used/Swipper/Swipper'
 const url = 'http://localhost:8000/data'
 
 const Home = () => {
-
+    const banner1Info={buttonText:"Explore more",path:"/",title:"More about ethiopia",img:"https://cdn.bunniktours.com.au/public/posts/images/Africa/Lalibela%201%20%284%29-feature.JPG",text:"Ethiopia is home to the lowest place on the African continent, the Danakil Depression.The depression is at the junction of three tectonic plates in the Horn of Africa, and sits at approximately 125 metres below sea level. At 200 kilometres long by 50 metres wide, this relatively small desert is also home to roughly 25% of Africa’s volcanoes!"}
     const [sites,setSites] = useState([]);
-    const [search,setSearch] = useState([]);
     const [s_name,setName] = useState('')
     const [cityList,setCityList]=useState([])
+    // const [searchResult,setSearchResult]=useState([])
+    // const [recentGroup,setRecentGroup]=useState([])
+    // const [popularPackage,setpPopularPackage]=useState([])
+  
 
-    // useEffect((
-    //     fetch(url)
-    //     .then((resp)=>resp.json())
-    //     .then((data)=>setSites(data))
-    //     .catch((err)=>console.log(err.message))
-    // ))
-     const fetchData = async () => {
-        try{
-            const res = await fetch(url);
-            const data = await res.json();
-            setSites(data)
-           
-            const allCity=data.map((site)=>site.name)
-            const defaultCaseCity=allCity.map((site)=>site.toLowerCase())
-            const searchCity=defaultCaseCity.filter((city)=>city.includes(s_name.toLowerCase()))
+    
+
+    const fetchMainData= async () =>{
+              const fetchedData=await fetch(url)
+              const data=await fetchedData.json()
+              if (data){
+                setSites(data)
+              }
+            //   const fetchedData1=await fetch('group-package?recent=true')
+            //   const data1=await fetchedData.json()
+            //   setRecentGroup(data1)
+            // const fetchedData2=await fetch('all-but-group-package?popular=true')
+            //    const data2=await fetchedData.json()
+            //    setpPopularPackage(data2)
+
+              
+        }
+
+   useEffect(()=>
+   {fetchMainData()},[])
+   
+     const filterData = () => {
+            // fetch(`/city-package?city=${s_name}`)
+            const allCity=sites.map((site)=>site.name.toLowerCase())
+            const searchCity=allCity.filter((city)=>city.includes(s_name.toLowerCase()))
             if (s_name){
-             setCityList(searchCity)
+                if(searchCity.length>0){
+                setCityList(searchCity)
+                }
+                else{
+                    setCityList(['No City pPackage Was Found '])
+                }
+             
             }
             else{
                 setCityList([])
             }
-            console.log(searchCity)
-        }catch(Error){
-            console.log(Error);
-        }
+ 
     } 
     useEffect(() => {
-        fetchData();
+        filterData();
     },[s_name]);
 
-    const searchFun = (name) => {
-        if(name){
-            const search = sites.filter((site) => site.name === name)
-            setSearch(search)
-        }else{
-            setSearch(sites)
-        }
-    }
+//   fetch(`/group-package?popularity=true`)
     const most = sites.filter((most) => most.price > 20)
 
   return (
     <div className="home">
       <div className="search">
+     
         <div className="search-button">
             <input type="search"  placeholder='where to' value={s_name} onChange={(e) => setName(e.target.value)}   id='search' style={{marginTop:'6rem'}}  />
             <label htmlFor="search" ><FaSearch /></label>
@@ -72,24 +84,29 @@ const Home = () => {
             </div>
 
            );
-        })}
+               })}
         </div>
         
       </div>
             <h2 id='visit'>Recent packeges</h2>
             <div className="site">
-        {sites.map((site) => {
-            return( <H  {...site} key={site.id} />)
+             <Swipper data={sites}/>
+            {/* {
+                recentGroup.map((site) => {
+            return ( <Recent  {...site} key={site.id} />)
                 })
-            }
+            } */}
             </div>
+            <Banner {...banner1Info}  />
              <h2 id='visit'>MOST VISITED CITIES</h2>
-            <div className="site">
-                {most.map((site) => {
-                    return( <M  {...site} key={site.id} /> )
-                })
-            }
+                <div className="site">{
+                    < Swipper data={sites}/>
+                }
+            {/* {popularPackage.map((site) => {
+            return ( <Popular {...site} key={site.id} />)
+                })} */}
             </div>
+     {/* <p>unisco</p> */}
     <div className="explore">
         <h2>MORE TO EXPLORE</h2>
          <div className="site">
@@ -114,3 +131,4 @@ const Home = () => {
 }
 
 export default Home
+ 
