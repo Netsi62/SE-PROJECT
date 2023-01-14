@@ -1,0 +1,26 @@
+.footer{
+    background-color:  rgb(151, 151, 137);
+    margin-top: 2rem;
+    padding: 1em;
+    border-top: 1.5px solid black;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-content: center;
+}
+
+.site-map{
+    display: flex;
+    flex-direction: column;
+}
+
+.site-map li{
+    list-style: none;
+}
+
+.copyright{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    justify-self:right;
+    margin-right: 4rem;
+    font-size: smaller;
+}

@@ -1,0 +1,30 @@
+{
+    "data":[
+        {
+            "id":1,
+            "name":"lalibela",
+            "body":"this is one of popular area that most people from differnet country visit and also it historical place that is kept at uinesco ",
+            "image":"https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSsARoFsS0yXkd2SkdCKiD3J5O-3bDixBH_ngCiao10ej2-hih_KrqG0CNodvEbKTbJ2l6n76TjzmiLORILDj81vQ",
+            "price":20,
+            "rate":5
+    },
+        {
+            "id":2,
+            "name":"Gonder",
+            "body":"this is one of popular area that most people from differnet country visit and also it historical place that is kept at uinesco ",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhdRv6lEoIJPi5rRCP9jLsmL5k3o7AOGdknZFEXue8oGVNYYAX7OlJPwS0LVhfTQFNlR7Be7_MYiUo41zsPmOyw",
+            "price":40,
+            "rate":3,
+            "deadline":"2017"
+
+    },
+        {
+            "id":3,
+            "name":"Bahir Dar",
+            "body":"this is one of popular area that most people from differnet country visit and also it historical place that is kept at uinesco ",
+            "image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRpzdo-fjlTdtIgNzrK_a5YCrbHzbyN_uOv1N1MIOETEQrMERU0yc7IHrm16EAQHg4D61wfHHiMJV5FTGlL8iBqDA",
+            "price":30,
+            "rate":4
+    }
+    ]
+}
