@@ -8,17 +8,31 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-
-    password : {
+    password: {
         type: String,
         minlength: 5,
-        required:  true,
+        required: true,
     },
     email: {
         type: String,
-        required:  true,
-    }
-})
+        required: true,
+        unique: true,
+    },
+    bookedPackages:  [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Package'
+    }],
+    wishList:  [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Package'
+    }],
+    Comment:  [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
+},
+    { timestamps: true }
+);
 
 
 export default mongoose.model("User", userSchema);
