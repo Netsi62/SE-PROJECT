@@ -3,6 +3,7 @@
 import mongoose from "mongoose";
 
 import User from "../Models/userModel.js";
+import { Types } from "mongoose";
 // 
 // import Wishlist from "../Models/wishList.js";
 import dotenv from "dotenv";
@@ -25,10 +26,9 @@ export default async (req,res)=>{
      * here is the error
     */
     const {_id}= jwt.verify(token,process.env.KEY);
-    const user =await User.findOne({name:"abel"})
-    console.log(user)
-    
-
+    const id =Types.ObjectId(_id)
+   
+    const user =await User.findOne({_id:id})
     return user ? user : "C"
 }
 
@@ -76,7 +76,7 @@ export const signup = async (req, res) => {
 
         const newUser = await User.create({ name, password:hashedPassword, email })
 
-        const token = jwt.sign({_id}, process.env.KEY)
+        const token = jwt.sign({_id:newUser._id}, process.env.KEY)
         res.status(201).json({ token, newUser})
     } catch (error) {
         res.status(401).json({ message: error.message });
