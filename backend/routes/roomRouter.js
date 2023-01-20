@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-import { getAllRooms, getRoom, addRoom, updateRoom, deleteRoom} from "../controllers/userController";
+// import { getAllRooms, getRoom, addRoom, updateRoom, deleteRoom} from "../controllers/userController.js";
 
 const roomRouter = express.Router();
 
@@ -14,11 +14,11 @@ const roomRouter = express.Router();
  * - deleteRoom: for deleting an existing Room
  */
 
-roomRouter.get("/", getAllRooms);
-roomRouter.get("/:id", getRoom);
-roomRouter.post("/add", addRoom);
-roomRouter.put("/:id", updateRoom);
-roomRouter.delete("/:id", deleteRoom);
+// roomRouter.get("/", getAllRooms);
+// roomRouter.get("/:id", getRoom);
+// roomRouter.post("/add", addRoom);
+// roomRouter.put("/:id", updateRoom);
+// roomRouter.delete("/:id", deleteRoom);
 
 
 

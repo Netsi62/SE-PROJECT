@@ -5,8 +5,10 @@ import mongoose from "mongoose";
 const hotelSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
+    
     location: {
         type: String,
         required: true
@@ -15,28 +17,14 @@ const hotelSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    rating: {
-        type: Number,
-        default: 0,
-        min: 0,
-        max: 5
-    },
-    totalRatings: {
-        type: Number,
-        default: 0,
-    },
     images: [{
         type: String,
         required: true,
     }],
-    rooms: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Room'
-    }],
-    availableRooms: {
+    availableRooms: [{
         type: Number,
-        default: 0
-    },
+        required : true,
+    }],
     createdAt: {
         type: Date,
         default: Date.now

@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-import { getAllUsers, getProfile, updateProfile ,signup, login, addToWishlist, bookPackage, viewWishlist, removeFromBookedPackages, removeFromWishlist} from "../controllers/userController";
+import { signup, login} from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
@@ -20,16 +20,15 @@ const userRouter = express.Router();
  - viewCart: for viewing the cart of the logged-in user
 */
 
-userRouter.get("/", getAllUsers);
-userRouter.get("/:id", getProfile);
-userRouter.put("/:id", updateProfile);    // not that necessary
+// userRouter.get("/", getAllUsers);
 userRouter.post("/signup", signup);
 userRouter.post("/login", login);
-userRouter.post("/:id", addToWishlist);
-userRouter.post("/:id", bookPackage);
-userRouter.get("wishlist", viewWishlist)
-userRouter.post("/:id/unbook", removeFromBookedPackages);
-userRouter.delete("/:id", removeFromWishlist);
+
+// userRouter.post("/:id", addToWishlist);
+// userRouter.post("/:id", bookPackage);
+// userRouter.get("wishlist", viewWishlist)
+// userRouter.post("/:id/unbook", removeFromBookedPackages);
+// userRouter.delete("/:id", removeFromWishlist);
 
 
 

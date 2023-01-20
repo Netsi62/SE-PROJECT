@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 
-import Room from "../Models/roomsModel";
+import Room from "../Models/roomsModel.js";
 
 
 export const getAllRooms = async (req, res, next) => {

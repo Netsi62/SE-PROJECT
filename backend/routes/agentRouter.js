@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-import {getAllAgents, getAgent, addAgent, updateAgent, deleteAgent} from "../controllers/agentController";
+// import {getAllAgents, getAgent, addAgent, updateAgent, deleteAgent} from "../controllers/agentController.js";
 
 
 /**
@@ -16,10 +16,10 @@ import {getAllAgents, getAgent, addAgent, updateAgent, deleteAgent} from "../con
 */
 const agentRouter = express.Router();
 
-agentRouter.get("/", getAllAgents);
-agentRouter.get("/:id", getAgent);
-agentRouter.post("/:id", addAgent);
-agentRouter.put("/:id", updateAgent);
-agentRouter.delete("/:id", deleteAgent);
+// agentRouter.get("/", getAllAgents);
+// agentRouter.get("/:id", getAgent);
+// agentRouter.post("/:id", addAgent);
+// agentRouter.put("/:id", updateAgent);
+// agentRouter.delete("/:id", deleteAgent);
 
 export default agentRouter;

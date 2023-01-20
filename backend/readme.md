@@ -39,7 +39,7 @@
  - getPackage: for fetching a specific package
  - searchPackages: for searching packages based on certain criteria
  - addPackage: for adding a new package
- - pdatePackage: for updating an existing package
+ - updatePackage: for updating an existing package
  - deletePackage: for deleting an existing package
 
 # 3.Comment controller:

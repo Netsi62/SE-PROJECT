@@ -5,13 +5,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // all routers
-import packageRouter from "./routes/packageRouter";
-import hotelRouter from "./routes/hotelRouter";
-import userRouter from "./routes/userRouter";
-import agentRouter from "./routes/agentRouter";
-import commentRouter from "./routes/commentRouter";
-import bookingRouter from "./routes/bookingRouter";
-import roomRouter from "./routes/roomRouter";
+import packageRouter from "./routes/packageRouter.js";
+import hotelRouter from "./routes/hotelRouter.js";
+import userRouter from "./routes/userRouter.js";
+import agentRouter from "./routes/agentRouter.js";
+import commentRouter from "./routes/commentRouter.js";
+import bookingRouter from "./routes/bookingRouter.js";
+import roomRouter from "./routes/roomRouter.js";
+import  wishlistRouter  from "./routes/wishlistRouter.js";
 
 const app = express();
 
@@ -19,23 +20,30 @@ const app = express();
 app.use(express.json());
 
 // use routers
-app.use("api/package", packageRouter);
-app.use("api/hotel", hotelRouter);
-app.use("api/user", userRouter);
-app.use("api/agent", agentRouter);
-app.use("api/comment", commentRouter);
+app.use("/api/v1/package", packageRouter);
+app.use("/api/comment", commentRouter);
+app.use("/api/user", userRouter);
+app.use("/api/wishlist", wishlistRouter);
+
+
+
+
+app.use("/api/hotel", hotelRouter);
+app.use("/api/agent", agentRouter);
 app.use("api/booking", bookingRouter);
-app.use("api/user", userRouter);
 app.use("api/room", roomRouter);
 
 // username : touretdb
 // passowrd: admin
+
+mongoose.set('strictQuery', false);
 
 async function connectToDb() {
     try {
         await mongoose.connect(process.env.MONGODBURL, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log(`Connected to database successfully`);
     } catch (error) {
+        console.log(`this is an error message`);
         console.log(error.message);
     }
 }

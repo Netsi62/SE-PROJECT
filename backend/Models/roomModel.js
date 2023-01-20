@@ -9,27 +9,29 @@ const roomSchema = new mongoose.Schema({
         required: true
     },
     roomNumber: {
-        type: String,
+        type: Number,
         required: true,
         unique: true
     },
     type: {
         type: String,
-        enum: ['single', 'double'],
+        enum: ['single', 'double',],
         required: true
     },
+    description: {
+        type: String,
+    
+    },
+    images: [{
+        type: String,
+        required: true,
+    }],
     price: {
         type: Number,
         required: true
     },
-    available: {
-        type: Boolean,
-        default: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+},{
+    timestamp: true,
 });
 
 

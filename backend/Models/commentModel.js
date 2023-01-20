@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 const commentSchema = new mongoose.Schema({
     user: {
-        type: mongoose.Schema.Types.ObjectId,
+        type:String,
         ref: 'User',
         required: true
     },
@@ -18,15 +18,13 @@ const commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    rating: {
+    like: {
         type: Number,
-        required: true,
-        min: 0,
-        max: 5
+        default : 0
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
+    dislike: {
+        type: Number,
+        default: 0
     }
 }, {
     timestamps: true,

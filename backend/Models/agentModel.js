@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 
-const agentSchema = new Schema({
+const agentSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -20,7 +20,7 @@ const agentSchema = new Schema({
     },
     role: {
         type: String,
-        enum: ['Hotel Owner', 'Tour Agent'],
+        enum: ['admin', 'agent'],
     },
     phone: {
         type: String,
@@ -47,4 +47,4 @@ const agentSchema = new Schema({
 });
 
 
-export default model('Agent', agentSchema);
+export default mongoose.model('Agent', agentSchema);

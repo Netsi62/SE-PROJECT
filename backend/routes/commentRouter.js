@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-import { getComment, addComment, updateComment, deleteComment } from "../controllers/commentController";
+import { getComment, addComment, updateComment } from "../controllers/commentController.js";
 
 const commentRouter = express.Router();
 
@@ -11,12 +11,11 @@ const commentRouter = express.Router();
  * getComment: to get comment on a specific package
  * addComment: for adding a comment on a package
  * updateComment: for updating an existing comment
- * deleteComment: for deleting an existing comment
  */
-commentRouter.get("/:id", getComment);
-commentRouter.post("/add", addComment);
-commentRouter.put("/update/:id", updateComment);
-commentRouter.delete("/:id", deleteComment);
+commentRouter.get("/", getComment);
+commentRouter.post("/", addComment);
+commentRouter.patch("/:id", updateComment);
+
 
 
 export default commentRouter;

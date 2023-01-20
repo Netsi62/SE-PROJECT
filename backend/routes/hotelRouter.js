@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-import {getAllHotels, getHotel, addHotel, updateHotel, deleteHotel} from "../controllers/hotelController";
+// import {getAllHotels, getHotel, addHotel, updateHotel, deleteHotel} from "../controllers/hotelController.js";
 
 /** 
  * - getAllHotels: for fetching all the agents
@@ -14,10 +14,10 @@ import {getAllHotels, getHotel, addHotel, updateHotel, deleteHotel} from "../con
 const hotelRouter  = express.Router();
 
 
-hotelRouter.get("/", getAllHotels);
-hotelRouter.post("/signup", getHotel);
-hotelRouter.post("/login", addHotel);
-hotelRouter.post("/:id", updateHotel);
-hotelRouter.post("/:id", deleteHotel);
+// hotelRouter.get("/", getAllHotels);
+// hotelRouter.post("/signup", getHotel);
+// hotelRouter.post("/login", addHotel);
+// hotelRouter.post("/:id", updateHotel);
+// hotelRouter.post("/:id", deleteHotel);
 
 export default hotelRouter;

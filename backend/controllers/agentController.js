@@ -3,8 +3,8 @@
 import mongoose from "mongoose";
 
 
-import Package from "../Models/packageModel";
-import Agent from "../Models/agentModel";
+import Package from "../Models/packageModel.js";
+import Agent from "../Models/agentModel.js";
 
 
 

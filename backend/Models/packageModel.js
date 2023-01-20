@@ -12,8 +12,8 @@ const packageSchema = new mongoose.Schema({
         required: true
     },
     duration: {
-        type: Number,
-        required: true
+        type: String,
+        // required: true
     },
     pricePerAdult: {
         type: Number,
@@ -21,7 +21,7 @@ const packageSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
+        // required: true
     },
     rating: {
         type: Number,
@@ -31,37 +31,33 @@ const packageSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
-    departureDates: {
-        type: Array,
-        required: false,
-    },
-    image: {
+    departureDates: [{
+        type: Date
+    }],
+    image: [{
         type: String,     // We can Store just the url to the image.
-        required: true
-    },
+    }],
     type: {
         type: String,
+        // required: true,
+        enum: ["City", "Group", "Other"]    // different types of packages.
+    },
+    to_do_type: {
+        type: String,
+        // required: true,
+    },
+    customID: {
+        type: Number,
         required: true,
-        enum: ["City", "Group", "Holiday"]    // different types of packages.
-    },
-    agent: {
-        // let's just store the reference to the agent
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Agent",
-        required: true,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    },
-    Comment: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
-    }]
+    }
+
+    // agent: {
+    //     // let's just store the reference to the agent
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Agent",
+    //     required: true,
+    // },
+
 },
     {
         timestamps: true

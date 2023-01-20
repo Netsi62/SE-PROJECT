@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 
 
 
-import  Hotel from "../Models/hotelModel";
-import User from "../Models/userModel";
-import Booking from "../Models/bookingModel";
-import Package from "../Models/packageModel";
+import  Hotel from "../Models/hotelModel.js";
+import User from "../Models/userModel.js";
+import Booking from "../Models/bookingModel.js";
+import Package from "../Models/packageModel.js";
 
 
 export const getAllBookings = async (req, res, next) => {}
