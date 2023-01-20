@@ -2,15 +2,12 @@
 
 import mongoose from mongoose;
 
+
+/* importing all the models needed inthis */
 import Package from "../Models/packageModel";
 import Agent from "../Models/agentModel";
 
-// get all packages independent of the type
-// get a single package by id
 
-// create a new package
-// update a package
-// Delete a package
 
 export const getAllPackages = async (req, res, next) => {
     let packages;
@@ -28,7 +25,7 @@ export const getAllPackages = async (req, res, next) => {
 
 
 // get a single city package by id
-export const getPackageById = async (req, res, next) => {
+export const getPackage = async (req, res, next) => {
     let existingPackage;
 
     try {
@@ -42,7 +39,7 @@ export const getPackageById = async (req, res, next) => {
 }
 
 // create a new package || allowed for agents only
-export const createNewPackage = async (req, res, next) => {
+export const addPackage = async (req, res, next) => {
     try {
         let existingAgent;
         try {

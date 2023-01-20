@@ -23,22 +23,31 @@ const packageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    departureDates:{
+    rating: {
+        type: Number,
+        default: 0,
+    },
+    totalRatings: {
+        type: Number,
+        default: 0,
+    },
+    departureDates: {
         type: Array,
         required: false,
     },
     image: {
-        type: Image,
+        type: String,     // We can Store just the url to the image.
         required: true
     },
     type: {
         type: String,
         required: true,
-        enum: ["City", "Group", "Holiday"]
+        enum: ["City", "Group", "Holiday"]    // different types of packages.
     },
-    agent:{
-        // let's just store the name of the agent
-        type: String,
+    agent: {
+        // let's just store the reference to the agent
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Agent",
         required: true,
     },
     createdAt: {
@@ -48,10 +57,15 @@ const packageSchema = new mongoose.Schema({
     updatedAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    Comment: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
 },
-{
-    timestamps: true
-});
+    {
+        timestamps: true
+    });
+
 
 export default mongoose.model("Package", packageSchema);

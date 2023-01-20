@@ -1,6 +1,6 @@
 
-
 import mongoose from "mongoose";
+
 
 const roomSchema = new mongoose.Schema({
     hotel: {
@@ -15,7 +15,7 @@ const roomSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['single', 'double', 'suite'],
+        enum: ['single', 'double'],
         required: true
     },
     price: {
@@ -26,9 +26,6 @@ const roomSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-    amenities: [{
-        type: String
-    }],
     createdAt: {
         type: Date,
         default: Date.now

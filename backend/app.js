@@ -8,7 +8,10 @@ dotenv.config();
 import packageRouter from "./routes/packageRouter";
 import hotelRouter from "./routes/hotelRouter";
 import userRouter from "./routes/userRouter";
-
+import agentRouter from "./routes/agentRouter";
+import commentRouter from "./routes/commentRouter";
+import bookingRouter from "./routes/bookingRouter";
+import roomRouter from "./routes/roomRouter";
 
 const app = express();
 
@@ -19,7 +22,11 @@ app.use(express.json());
 app.use("api/package", packageRouter);
 app.use("api/hotel", hotelRouter);
 app.use("api/user", userRouter);
-
+app.use("api/agent", agentRouter);
+app.use("api/comment", commentRouter);
+app.use("api/booking", bookingRouter);
+app.use("api/user", userRouter);
+app.use("api/room", roomRouter);
 
 // username : touretdb
 // passowrd: admin
@@ -39,8 +46,9 @@ async function startServer() {
         app.listen(process.env.PORT, (error) => {
             console.log(error);
         });
-    } catch (error) {
         console.log((`Listening through port ${process.env.PORT}`));
+    } catch (error) {
+        console.log(error.message);
     }
 }
 

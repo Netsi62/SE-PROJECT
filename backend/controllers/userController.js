@@ -4,16 +4,10 @@ import mongoose from "mongoose";
 
 import User from "../Models/userModel";
 import Package from "../Models/packageModel";
+import Wishlist from "../Models/wishList";
 
 import bcrypt from 'bcryptjs';
 
-
-// login
-// signup
-// add package to wishlist
-// book a package
-// remove from wishlist
-// cancel a booked package
 
 
 export const getAllUsers = async (req, res, next) => {
@@ -30,6 +24,11 @@ export const getAllUsers = async (req, res, next) => {
     }
     return res.status(200).json({ users });
 }
+
+export const getProfile = async (req, res, next) => {
+}
+
+export const updateProfile = async (req, res, next) => {}
 
 
 // authentication must be made here
@@ -149,6 +148,9 @@ export const bookPackage = async (req, res, next) => {
     }
 };
 
+export const viewWishlist = async (req, res, next) => {}
+
+
 
 // remove a package from wish list
 export const removeFromWishlist = async (req, res, next) => {
@@ -221,5 +223,4 @@ export const removeFromBookedPackages = async (req, res, next) => {
         next(err);
     }
 };
-
 

@@ -1,9 +1,9 @@
 
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
 
-const commentSchema = new Schema({
+
+const commentSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -31,7 +31,6 @@ const commentSchema = new Schema({
 }, {
     timestamps: true,
 });
-
 
 
 export default mongoose.model('Comment', commentSchema);;

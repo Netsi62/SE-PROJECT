@@ -1,6 +1,4 @@
 
-
-
 import mongoose from 'mongoose';
 
 
@@ -30,6 +28,10 @@ const bookingSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    paymentMethod: {
+        type: String,
+        enum: ['telebirr', 'CBE'],   //....
     }
 });
 

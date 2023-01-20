@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 
@@ -16,12 +17,17 @@ const hotelSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
-        required: true,
+        default: 0,
         min: 0,
         max: 5
     },
+    totalRatings: {
+        type: Number,
+        default: 0,
+    },
     images: [{
-        type: String
+        type: String,
+        required: true,
     }],
     rooms: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -34,7 +40,11 @@ const hotelSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
 }, {
     timestamps: true
 });

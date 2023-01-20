@@ -2,7 +2,6 @@
 import mongoose from 'mongoose';
 
 
-
 const agentSchema = new Schema({
     name: {
         type: String,
@@ -19,9 +18,9 @@ const agentSchema = new Schema({
         required: true,
         minlength: 8
     },
-    privilage: {
+    role: {
         type: String,
-        enum: ['hotelOwner', 'tourAgent'],
+        enum: ['Hotel Owner', 'Tour Agent'],
     },
     phone: {
         type: String,
@@ -37,7 +36,7 @@ const agentSchema = new Schema({
     }],
     Comments: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comments',
+        ref: 'Comment',
     }],
     createdAt: {
         type: Date,

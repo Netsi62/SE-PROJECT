@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 
@@ -18,15 +19,19 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
-    bookedPackages:  [{
+    bookedPackages: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Package'
+        ref: 'Booking'
     }],
-    wishList:  [{
+    bookedHotels: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Package'
+        ref: 'Hotel'
     }],
-    Comment:  [{
+    wishList: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'wishList',
+    }],
+    Comment: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
     }]
