@@ -12,26 +12,23 @@ const bookingSchema = new mongoose.Schema({
         ref: 'Package',
         required: true
     },
-    startDate: {
-        type: Date,
-        required: true
-    },
-    endDate: {
-        type: Date,
-        required: true
-    },
     numberOfPeople: {
         type: Number,
         required: true
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
+    price:{
+        type: Number,
+        default: 0,
+    },
+    hotel:{
+        type: mongoose.Schema.Types.ObjectId,
     },
     paymentMethod: {
         type: String,
         enum: ['telebirr', 'CBE'],   //....
     }
+},{
+    timestamps: true
 });
 
 

@@ -5,14 +5,23 @@ import mongoose from 'mongoose';
 
 const wishlistSchema = new mongoose.Schema({
     user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
+    packages: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
+    photo: {
         type: String,
         required: true
     },
-    packages: [{
+    price: {
         type: Number,
         required: true
-    }],
-    
+    }
+
+
 },
     { timestamp: true });
 

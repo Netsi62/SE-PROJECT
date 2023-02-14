@@ -7,9 +7,9 @@ const commentSchema = new mongoose.Schema({
     user: {
         type:String,
         ref: 'User',
-        required: true
+
     },
-    package: {
+    pkg: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Package',
         required: true

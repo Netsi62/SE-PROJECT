@@ -8,6 +8,10 @@ const roomSchema = new mongoose.Schema({
         ref: 'Hotel',
         required: true
     },
+    taken:{
+      type:Boolean,
+      default:false
+    },
     roomNumber: {
         type: Number,
         required: true,

@@ -46,11 +46,6 @@ const packageSchema = new mongoose.Schema({
         type: String,
         // required: true,
     },
-    customID: {
-        type: Number,
-        required: true,
-    }
-
     // agent: {
     //     // let's just store the reference to the agent
     //     type: mongoose.Schema.Types.ObjectId,

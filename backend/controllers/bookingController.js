@@ -9,7 +9,10 @@ import Booking from "../Models/bookingModel.js";
 import Package from "../Models/packageModel.js";
 
 
-export const getAllBookings = async (req, res, next) => {}
+export const getAllBookings = async (req, res, next) => {
+
+    
+}
 export const getBooking = async (req, res, next) => {}
 export const addBooking = async (req, res, next) => {}
 export const updateBooking = async (req, res, next) => {}

@@ -1,12 +1,16 @@
 
 import User from "../Models/userModel.js";
 import Comment from "../Models/commentModel.js";
-import authorizationChecker from "./userController.js"
+import authorizationChecker from "../middleware/auth.js"
+import { Types } from "mongoose";
 
 export const getComment = async (req, res) => {
     try {
-        const pkg_id =parseInt(req.query.pkg)
-        const comments = await Comment.find({ package: pkg_id });
+        const pkg_id = req.query.pkg
+
+        const id = Types.ObjectId(pkg_id)
+        console.log(id)
+        const comments = await Comment.find({ pkg: id });
         return res.status(200).json({ comments });
     } catch (error) {
         res.status(400).json({ message: error.message });
@@ -15,26 +19,26 @@ export const getComment = async (req, res) => {
 
 export const addComment = async (req, res) => {
     try {
-        const authorized = authorizationChecker(req)
-        if (authorized==="A") {
+        const authorized = await authorizationChecker(req)
+        if (authorized === "A") {
             return res.status(401).json({ message: "token reqired" })
         }
-        else if(authorized==="C"){
+        else if (authorized === "C") {
             return res.status(401).json({ message: "not authorized" })
-        
+
         }
-        const comments = await Comment.create(req.body);
-        return res.status(201).json({ comments });
+        const { pkg, text } = req.body
+
+        const newcomment = { user: authorized.name, pkg, text }
+
+        const comment = await Comment.create(newcomment);
+        return res.status(201).json({ comment });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 };
 export const updateComment = async (req, res) => {
     try {
-        const authorized = authorizationChecker(req)
-        if (!authorized) {
-            return res.status(407).json({ message: "anauthorized to access this page" })
-        }
         const comments = await Comment.findOneAndUpdate({ _id: req.params.id }, req.body);
         if (!comments) {
             res.status(404).json({ message: "no such commet" });

@@ -14,11 +14,11 @@ const roomRouter = express.Router();
  * - deleteRoom: for deleting an existing Room
  */
 
-// roomRouter.get("/", getAllRooms);
-// roomRouter.get("/:id", getRoom);
-// roomRouter.post("/add", addRoom);
-// roomRouter.put("/:id", updateRoom);
-// roomRouter.delete("/:id", deleteRoom);
+roomRouter.get("/", getAllRooms);
+roomRouter.get("/:id", getRoom);
+roomRouter.post("/", addRoom);
+roomRouter.patch("/:id", updateRoom);
+roomRouter.delete("/:id", deleteRoom);
 
 
 
