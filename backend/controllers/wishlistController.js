@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 import Package from "../Models/packageModel.js";
-import authorizationChecker from "../middleware/auth.js"
+import { authorizationChecker } from "../middleware/auth.js";
 import wishList from "../Models/wishListModel.js";
 import { ObjectId } from "mongoose";
 

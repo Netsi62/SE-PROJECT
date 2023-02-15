@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 import User from "../Models/userModel.js";
 import { Types } from "mongoose";
-export default async (req,res)=>{
+export async function authorizationChecker(req,res){
     const {authorization}=req.headers;
     if (!authorization){
        return  "A"

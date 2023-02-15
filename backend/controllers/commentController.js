@@ -1,7 +1,7 @@
 
 import User from "../Models/userModel.js";
 import Comment from "../Models/commentModel.js";
-import authorizationChecker from "../middleware/auth.js"
+import { authorizationChecker } from "../middleware/auth.js";
 import { Types } from "mongoose";
 
 export const getComment = async (req, res) => {

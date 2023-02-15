@@ -3,7 +3,7 @@
 
 import Hotel from "../Models/hotelModel.js";
 import Booking from "../Models/bookingModel.js";
-import authorizationChecker from "../middleware/auth.js"
+import {authorizationChecker } from "../middleware/auth.js";
 
 export const getAllBookings = async (req, res) => {
 

@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-import { getAllPackages, getPackage, ratePackage,updatePackage ,deletePackage} from "../controllers/packageController.js";
+import { getAllPackages, getPackage, ratePackage,updatePackage ,deletePackage,addPackage} from "../controllers/packageController.js";
 
 const packageRouter = express.Router();
 
@@ -17,6 +17,7 @@ const packageRouter = express.Router();
 packageRouter.get("/", getAllPackages);
 packageRouter.get("/:id", getPackage);
 packageRouter.patch("/:id", ratePackage);
+packageRouter.post("/", addPackage);
 packageRouter.patch("/:id/admin", updatePackage);
 packageRouter.delete("/:id", deletePackage);
 

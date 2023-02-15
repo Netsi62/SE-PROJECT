@@ -3,7 +3,7 @@
 
 
 import Room from "../Models/roomModel.js";
-import authorizationChecker, { authorize } from "../middleware/auth.js"
+import { authorize,authorizationChecker } from "../middleware/auth.js";
 
 export const getAllRooms = async (req, res) => {
     try {

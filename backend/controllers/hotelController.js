@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 
 import Hotel from "../Models/hotelModel.js";
 import Room from "../Models/roomModel.js";
-import authorizationChecker from "../middleware/auth.js"
-import { authorize } from "../middleware/auth.js";
+
+import { authorize,authorizationChecker } from "../middleware/auth.js";
 
 
 

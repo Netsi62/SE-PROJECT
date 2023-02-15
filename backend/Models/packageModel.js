@@ -31,6 +31,10 @@ const packageSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    priceRange:{
+        type:String,
+        enum: ["less5000", "5000-10000", "morethan10000"]
+    },
     departureDates: [{
         type: Date
     }],
