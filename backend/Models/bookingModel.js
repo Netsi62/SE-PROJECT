@@ -33,6 +33,11 @@ const bookingSchema = new mongoose.Schema({
     },
     hotel:{
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hotel',
+    },
+    room:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Room',
     },
     paymentMethod: {
         type: String,
