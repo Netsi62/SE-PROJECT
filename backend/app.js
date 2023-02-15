@@ -25,13 +25,10 @@ app.use("/api/comment", commentRouter);
 app.use("/api/user", userRouter);
 app.use("/api/wishlist", wishlistRouter);
 
-
-
-
 app.use("/api/hotel", hotelRouter);
+app.use("/api/room", roomRouter);
 app.use("/api/agent", agentRouter);
-app.use("api/booking", bookingRouter);
-app.use("api/room", roomRouter);
+app.use("/api/booking", bookingRouter);
 
 // username : touretdb
 // passowrd: admin

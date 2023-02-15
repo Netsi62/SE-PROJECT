@@ -28,15 +28,15 @@ const roomSchema = new mongoose.Schema({
     },
     images: [{
         type: String,
-        required: true,
+        required: false,
     }],
     price: {
         type: Number,
-        required: true
+        required: false
     },
 },{
     timestamp: true,
 });
 
 
-module.exports = mongoose.model('Room', roomSchema);;
+export default  mongoose.model('Room', roomSchema);;

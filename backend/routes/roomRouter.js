@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-// import { getAllRooms, getRoom, addRoom, updateRoom, deleteRoom} from "../controllers/userController.js";
+import { getAllRooms, getRoom, addRoom, updateRoom, deleteRoom} from "../controllers/roomController.js";
 
 const roomRouter = express.Router();
 

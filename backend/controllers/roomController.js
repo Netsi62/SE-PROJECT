@@ -2,17 +2,10 @@
 
 
 
-import Room from "../Models/roomsModel.js";
-
+import Room from "../Models/roomModel.js";
+import authorizationChecker, { authorize } from "../middleware/auth.js"
 
 export const getAllRooms = async (req, res) => {
-    let taken;
-    if (!req.query.taken) {
-        taken = {}
-    }
-    else {
-        taken = req.query.city
-    }
     try {
         const auth = await authorizationChecker(req)
 
@@ -22,7 +15,7 @@ export const getAllRooms = async (req, res) => {
         else if (auth === "C") {
             return res.status(401).json({ message: "not auth" })
         }
-        const rooms = await Room.find({ taken })
+        const rooms = await Room.find({ })
         res.status(200).json({ data: rooms })
     } catch (error) {
         res.status(500).json({ msg: error.message })
@@ -76,6 +69,7 @@ export const updateRoom = async (req, res) => {
         else if (auth === "C") {
             return res.status(401).json({ message: "not auth" })
         }
+        authorize(res,auth,"admin")
         const room = await Room.findOneAndUpdate({ _id: req.params.id, }, req.body, { new: true })
         if (!room) {
             return res.status(404).json({ msg: "No room " })
@@ -97,6 +91,7 @@ export const deleteRoom = async (req, res) => {
         else if (auth === "C") {
             return res.status(401).json({ message: "not auth" })
         }
+        authorize(res,auth,"admin")
         const room = await Room.findOneAndDelete({ _id: req.params.id })
         res.status(200).json({ data: room })
     }

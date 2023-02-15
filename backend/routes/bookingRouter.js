@@ -2,7 +2,7 @@
 import express from "express";
 
 // import controllers
-// import { getAllBookings, getBooking, addBooking, updateBooking, deleteBooking} from "../controllers/bookingController.js";
+import { getAllBookings, addBooking, updateBooking, deleteBooking,calculatePrice,checkAndDeleteBooking} from "../controllers/bookingController.js";
 /**
  * getAllBookings: for fetching all the bookings
  * getBooking: for fetching a specific booking
@@ -13,11 +13,12 @@ import express from "express";
 
 const bookingRouter = express.Router();
 
-// bookingRouter.get("/", getAllBookings);
-// bookingRouter.get("/:id", getBooking);
-// bookingRouter.post("/add", addBooking);
-// bookingRouter.put("/update/:id", updateBooking);
-// bookingRouter.delete("/delete/:id", deleteBooking);
+bookingRouter.get("/", getAllBookings);
+bookingRouter.post("/", addBooking);
+bookingRouter.post("/price", calculatePrice);
+bookingRouter.put("/:id", updateBooking);
+bookingRouter.delete("/:id", checkAndDeleteBooking)
+bookingRouter.delete("/:id/Force", deleteBooking);
 
 
 export default bookingRouter;

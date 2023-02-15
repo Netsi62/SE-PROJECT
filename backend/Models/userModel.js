@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     name: {
         type: String,
-        required:[true,"name is required"] ,
+        required: [true, "name is required"],
     },
     password: {
         type: String,
@@ -19,7 +19,12 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
-   
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default:"user"
+    }
+
 },
     { timestamps: true }
 );

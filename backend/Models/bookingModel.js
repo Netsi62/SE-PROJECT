@@ -12,13 +12,24 @@ const bookingSchema = new mongoose.Schema({
         ref: 'Package',
         required: true
     },
+    photo: {
+        type: String,
+        required: true
+    },
+    depDate: {
+        type: Date,
+        required: true
+    },
+    name:{
+        type: String,
+    },
     numberOfPeople: {
         type: Number,
         required: true
     },
     price:{
         type: Number,
-        default: 0,
+        required: true
     },
     hotel:{
         type: mongoose.Schema.Types.ObjectId,

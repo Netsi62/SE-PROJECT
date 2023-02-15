@@ -19,20 +19,9 @@ const hotelSchema = new mongoose.Schema({
     },
     images: [{
         type: String,
-        required: true,
+        required: false,
     }],
-    availableRooms: [{
-        type: Number,
-        required : true,
-    }],
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    comments: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
-    }]
+
 }, {
     timestamps: true
 });

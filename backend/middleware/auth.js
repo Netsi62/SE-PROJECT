@@ -17,3 +17,8 @@ export default async (req,res)=>{
     const user =await User.findOne({_id:id})
     return user ? user : "C"
 }
+export function authorize(res,user,role){
+    if (user.role!=role){
+        return res.status(400).json({msg:"not authorized"})
+    }
+}

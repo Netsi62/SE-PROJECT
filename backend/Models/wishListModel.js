@@ -12,6 +12,9 @@ const wishlistSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
+    name:{
+        type: String,
+    },
     photo: {
         type: String,
         required: true
