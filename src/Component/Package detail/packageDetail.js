@@ -45,6 +45,7 @@ function PackageDetail() {
            va ? setItemAdded(true):setItemAdded(false)
         }
 
+        
         useEffect(()=>
         {fetchMain()
         findId()
