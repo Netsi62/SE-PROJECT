@@ -1,0 +1,9 @@
+.book{
+    width: 90vw;
+    height: 70vh;
+    position: fixed;
+    left: 5vw;
+    top: 15vh;
+    background-color: rgb(239, 232, 232);
+    box-shadow: 1px 1px 3px 1px rgb(247, 242, 242);
+}

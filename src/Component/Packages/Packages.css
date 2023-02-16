@@ -1,0 +1,30 @@
+.packages{
+    display: grid;
+    grid-template-columns: 20% 70%;
+    justify-content: space-around;
+}
+
+.left{
+    background-color: rgb(40, 155, 130);
+}
+
+.left > * > *{
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.right img{
+    width: 180px;
+    height: 150px;
+    float: left;
+}
+
+.each-pa{
+    background-color: rgb(196, 125, 32);
+    height: 170px;
+}

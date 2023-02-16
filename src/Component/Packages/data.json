@@ -1,0 +1,52 @@
+{
+    "data":[
+        {
+            "id":1,
+            "type":"group",
+            "body":"this is one of popular area that most people",
+            "image":"https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSsARoFsS0yXkd2SkdCKiD3J5O-3bDixBH_ngCiao10ej2-hih_KrqG0CNodvEbKTbJ2l6n76TjzmiLORILDj81vQ",
+            "price":"secondPrice",
+            "rate":"five"
+    },
+        {
+            "id":2,
+            "type":"city",
+            "body":"this is one of popular area that most people",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhdRv6lEoIJPi5rRCP9jLsmL5k3o7AOGdknZFEXue8oGVNYYAX7OlJPwS0LVhfTQFNlR7Be7_MYiUo41zsPmOyw",
+            "price":"firstPrice",
+            "rate":"four"
+    },
+        {
+            "id":3,
+            "type":"museum",
+            "body":"this is one of popular area that most people",
+            "image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRpzdo-fjlTdtIgNzrK_a5YCrbHzbyN_uOv1N1MIOETEQrMERU0yc7IHrm16EAQHg4D61wfHHiMJV5FTGlL8iBqDA",
+            "price":"secondPrice",
+            "rate":"three"
+    },
+        {
+            "id":4,
+            "type":"park",
+            "body":"this is one of popular area that most people",
+            "image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRpzdo-fjlTdtIgNzrK_a5YCrbHzbyN_uOv1N1MIOETEQrMERU0yc7IHrm16EAQHg4D61wfHHiMJV5FTGlL8iBqDA",
+            "price":"above",
+            "rate":"two"
+    },
+        {
+            "id":5,
+            "type":"park",
+            "body":"this is one of popular area that most people",
+            "image":"https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSsARoFsS0yXkd2SkdCKiD3J5O-3bDixBH_ngCiao10ej2-hih_KrqG0CNodvEbKTbJ2l6n76TjzmiLORILDj81vQ",
+            "price":8000,
+            "rate":"two"
+    },
+        {
+            "id":6,
+            "type":"park",
+            "body":"this is one of popular area that most people",
+            "image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRpzdo-fjlTdtIgNzrK_a5YCrbHzbyN_uOv1N1MIOETEQrMERU0yc7IHrm16EAQHg4D61wfHHiMJV5FTGlL8iBqDA",
+            "price":500,
+            "rate":"one"
+    }
+    ]
+}
