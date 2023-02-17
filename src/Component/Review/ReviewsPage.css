@@ -1,0 +1,7 @@
+.reviews{
+    margin-top: 100px;
+}
+.review textarea{
+    width: 500px;
+    height: 200px;
+}
